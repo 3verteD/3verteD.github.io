@@ -15,7 +15,7 @@ HEADERS = {"Content-Type": "application/json",}
 @views.route("/")
 def home():
     return render_template(
-        "home.html")
+        "index.html")
 
 @views.route("/write_start", methods=["GET", "POST"])
 def write_start():
@@ -31,7 +31,7 @@ def write_start():
     response = requests.post(URL_POST, headers=HEADERS, json={'runtime':payload})
 
     return render_template(
-        "home.html")
+        "index.html")
     
 @views.route("/write_end", methods=["GET", "POST"])
 def write_end():
@@ -47,7 +47,7 @@ def write_end():
     response = requests.put(URL, headers=HEADERS, json={"runtime": payload})
     
     return render_template(
-        "home.html")
+        "index.html")
 
 # schedule viewing page
 @views.route("/schedule", methods=["GET"])
